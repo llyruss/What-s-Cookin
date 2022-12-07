@@ -1,0 +1,32 @@
+[ 
+    {   
+     "id": 1,
+    "ingredientName": "6 Cups Water",
+    "recipe_id": 1 
+    },
+    {   
+     "id": 2,
+    "ingredientName": "12 oz Noodles",
+    "recipe_id": 1 
+    },
+    {   
+     "id": 3,
+    "ingredientName": "Ketchup",
+    "recipe_id": 1 
+    },
+    {   
+     "id": 1,
+    "ingredientName": "Bread",
+    "recipe_id": 2
+    }, 
+    {   
+     "id": 2,
+    "ingredientName": "Garlic",
+    "recipe_id": 2
+    },    
+    {   
+     "id": 3,
+    "ingredientName": "Butter",
+    "recipe_id": 2
+    }       
+]
