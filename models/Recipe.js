@@ -15,6 +15,15 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    has_nuts: {
+      type: DataTypes.BOOLEAN,
+    },
+    gluten_free: {
+      type: DataTypes.BOOLEAN,
+    },
+    vegan: {
+      type: DataTypes.BOOLEAN,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
