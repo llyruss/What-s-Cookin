@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     // Serialize data so the template can read it
 
     // Pass serialized data and session flag into template
-    res.render('home', { 
+    res.render('recipe-details', { 
       
     //   logged_in: req.session.logged_in 
     });
