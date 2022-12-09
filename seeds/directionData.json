@@ -1,51 +1,51 @@
 [
     {
-        "id": 1,
+       
         "recipeDirection": "add three cups water",
         "recipe_id": 1
     },
     {
-        "id": 2,
+       
         "recipeDirection": "Boil water for 20 minutes",
         "recipe_id": 1
     },
     {
-        "id": 3,
+        
         "recipeDirection": "Strain Water",
         "recipe_id": 1
     },
     {
-        "id": 4,
+       
         "recipeDirection": "Put on plate and add ketchup. Serve only to Young kids. YUCK",
         "recipe_id": 1
     },
     {
-        "id": 1,
+        
         "recipeDirection": "Preheat Oven 400 Degrees",
         "recipe_id": 2
     },
     {
-        "id": 2,
+       
         "recipeDirection": "Cut bread in half",
         "recipe_id": 2
     },
     {
-        "id": 3,
+        
         "recipeDirection": "Spread butter over both sides",
         "recipe_id": 2
     },
     {
-        "id": 4,
+        
         "recipeDirection": "Add garlic over the top",
         "recipe_id": 2
     },
     {
-        "id": 5,
+        
         "recipeDirection": "Bake in oven for 7 minutes",
         "recipe_id": 2
     },
     {
-        "id": 6,
+     
         "recipeDirection": "Remove from oven and serve hot or cold the next day if hung over.",
         "recipe_id": 2
     }
