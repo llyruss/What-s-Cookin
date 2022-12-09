@@ -2,7 +2,6 @@
 const Recipe = require('./Recipe');
 const User = require('./User');
 const Tag = require('./Tag');
-const RecipeTag = require('./RecipeTag');
 const Ingredient = require('./Ingredient');
 const Direction = require('./Direction');
 
@@ -49,7 +48,6 @@ module.exports = {
   Recipe,
   User,
   Tag,
-  RecipeTag,
   Ingredient,
   Direction
 };
