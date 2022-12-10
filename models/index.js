@@ -1,7 +1,6 @@
 // import models
 const Recipe = require('./Recipe');
 const User = require('./User');
-const Tag = require('./Tag');
 const Ingredient = require('./Ingredient');
 const Direction = require('./Direction');
 
@@ -12,17 +11,6 @@ User.hasMany(Recipe, {
 
 Recipe.belongsTo(User, {
     foreignKey: 'user_id'
-  });
-
-Recipe.belongsToMany(Tag, {
-    // Define the third table needed to store the foreign keys
-    through: RecipeTag,
-    foreignKey: "recipe_id",
-  });
-
-Tag.belongsToMany(Recipe,{
-    through: RecipeTag,
-    foreignKey: "tag_id"
   });
 
 Recipe.hasMany(Ingredient, {
@@ -47,7 +35,6 @@ Ingredient.belongsTo(Recipe, {
 module.exports = {
   Recipe,
   User,
-  Tag,
   Ingredient,
   Direction
 };

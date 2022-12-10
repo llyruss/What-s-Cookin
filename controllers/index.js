@@ -1,22 +1,13 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
+const apiRoutes = require("./api");
+const homeRoutes = require("./homeRoutes");
 
-router.get('/', async (req, res) => {
-  try {
-    // Get all projects and JOIN with user data
-    
-    
-
-    // Serialize data so the template can read it
-
-    // Pass serialized data and session flag into template
-    res.render('get-all-recipes', { 
-      
-    //   logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+router.use("/", homeRoutes);
+router.use("/api", apiRoutes);
 
 module.exports = router;
+
+
+
+
