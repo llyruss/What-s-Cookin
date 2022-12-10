@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Recipe, User, Direction, Ingredient } = require('../../models');
 const withAuth =  require('../../utils/auth')
-0
-const withAuth =  require('../../utils/auth')
 
   router.get("/", async (req, res) => {
     try {
@@ -17,7 +15,6 @@ const withAuth =  require('../../utils/auth')
             { model: Ingredient,
                 attributes:['ingredientName']
             },
-            
         ],
       });
       res.status(200).json(recipeData);
@@ -42,7 +39,7 @@ const withAuth =  require('../../utils/auth')
   });
 
 
-
+  module.exports = router
 
 
   
