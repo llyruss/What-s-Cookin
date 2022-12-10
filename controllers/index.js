@@ -1,6 +1,5 @@
 const router = require('express').Router();
 
-
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data

@@ -17,9 +17,7 @@ const withAuth =  require('../../utils/auth')
             { model: Ingredient,
                 attributes:['ingredientName']
             },
-            { model: Tag,
-                attributes:['tag_name']
-            },
+            
         ],
       });
       res.status(200).json(recipeData);
@@ -32,6 +30,9 @@ const withAuth =  require('../../utils/auth')
     try {
       const newRecipe = await Recipe.create({
         recipeName: req.body.recipeName,
+        has_nuts: req.body.has_nuts,
+        gluten_free: req.body.gluten_free,
+        vegan: req.body.vegan
       });
       res.status(200).json(newRecipe);
     } catch (err) {

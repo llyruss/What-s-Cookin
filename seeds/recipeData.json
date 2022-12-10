@@ -2,12 +2,18 @@
     {
         "id": 1,
         "recipeName": "Noodles and Water",
-        "user_id": 1
+        "user_id": 1,
+        "has_nuts": true,
+        "gluten_free": false,
+        "vegan": true 
     },
     {
         "id": 2,
         "recipeName": "Garlic Bread",
-        "user_id": 2
+        "user_id": 2,
+        "has_nuts": false,
+        "gluten_free": true,
+        "vegan": true 
     }
 
 ]
