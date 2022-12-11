@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Recipe, Ingredient, Direction } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
@@ -13,7 +13,7 @@ router.get('/recipes', async (req, res) => {
         include: [
           {
               model: User,
-              attributes: ["name"]
+              attributes: ["userName"]
           },
       ],
   });
