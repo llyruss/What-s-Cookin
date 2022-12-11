@@ -1,12 +1,14 @@
 main {
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .home-pic {
     display: flex;
     justify-content: center;
     height: 300px;
     width: 600px;
+    margin: 20px;
     
 }
 
