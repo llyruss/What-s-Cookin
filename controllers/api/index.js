@@ -5,8 +5,8 @@ const ingredientRoutes = require('./ingredientRoutes');
 const directionRoutes = require('./directionRoutes');
 
 router.use('/users', userRoutes);
-// router.use('/recipes', recipeRoutes);
-// router.use('/ingredients', ingredientRoutes);
-// router.use('/directions', directionRoutes);
+router.use('/recipes', recipeRoutes);
+router.use('/ingredients', ingredientRoutes);
+router.use('/directions', directionRoutes);
 
 module.exports = router;

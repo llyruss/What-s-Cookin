@@ -1,23 +1,23 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-// 
+
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create({
-      username: req.body.userName,
-      password: req.body.password,
-    });
+    const userData = await User.create(req.body);
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.userId = userData.dataValues.id;
+      req.session.userName = userData.dataValues.userName;
+      req.session.logged_in = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(userData);
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
+
 
 router.post('/login', async (req, res) => {
   try {
@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect password. Please try again!' });
+        .json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
 
@@ -44,7 +44,9 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.userId = dbUserData.dataValues.id;
+      req.session.userName = dbUserData.dataValues.userName;
+      req.session.logged_in = true;
 
       res
         .status(200)
@@ -66,6 +68,7 @@ router.post('/logout', (req, res) => {
   } else {
     res.status(404).end();
   }
+  res.json({message: "You are now logged out"})
 });
 
 module.exports = router;
