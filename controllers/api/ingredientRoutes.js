@@ -1,10 +1,12 @@
 const router = require('express').Router();
 const { Ingredient } = require('../../models');
-const withAuth =  require('../../utils/auth')
+// const withAuth =  require('../../utils/auth')
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', 
+//withAuth, 
+async (req, res) => {
     try {
-      const newIngredient = await Ingredient.bulkCreate({
+      const newIngredient = await Ingredient.create({
         ingredientName: req.body.ingredientName,
       });
       res.status(200).json(newIngredient);
@@ -14,4 +16,15 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  router.get('/', async (req, res) => {
+    try { 
+      const ingredientData = await Ingredient.findAll();
+      res.status(200).json(ingredientData)
+    } catch(err) {
+      res.status(500).json(err)
+    }
+  });
+
   module.exports = router 
+
+  
