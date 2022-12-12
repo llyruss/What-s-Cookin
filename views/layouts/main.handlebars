@@ -26,13 +26,20 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/login">Sign up</a>
                 </li>
+                {{#if loggedIn}}
+                <button id="logout" class="logout">Logout</button>
+                {{else}}
                 <li class="nav-item">
                   <a class="nav-link" href="/login" tabindex="-1" aria-disabled="true">Login</a>
+                  {{/if}}
                 </li>
               </ul>
             </div>
           </nav>
         </div>
    {{{body}}} 
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>
