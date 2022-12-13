@@ -20,7 +20,7 @@ router.get('/recipes', async (req, res) => {
       ],
   });
   const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-  res.render("get-all-recipes", { 
+  res.render("create-recipe", { 
     recipes, 
     logged_in: req.session.logged_in
 })
