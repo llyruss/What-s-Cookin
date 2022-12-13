@@ -30,41 +30,41 @@ router.get("/recipes", async (req, res) => {
   }
 });
 
-router.get("/recipes1", async (req, res) => {
-  try {
-    const recipeData = await Recipe.findAll({
-      include: [
-        { model: User, attributes: ["userName"] },
-        { model: Direction, attributes: ["recipeDirection"] },
-        { model: Ingredient, attributes: ["ingredientName"] },
-      ],
-    });
-    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    console.log(recipes);
+// router.get("/recipes/:id", async (req, res) => {
+//   try {
+//     const recipeData = await Recipe.findByPk({
+//       include: [
+//         { model: User, attributes: ["userName"] },
+//         { model: Direction, attributes: ["recipeDirection"] },
+//         { model: Ingredient, attributes: ["ingredientName"] },
+//       ],
+//     });
+//     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+//     console.log(recipes);
 
-    res.render("recipe-details", {
-      recipes,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     res.render("recipe-details", {
+//       recipes,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get("/recipes/:id", async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params["id"],
       {
-      include: [
-        { model: User, attributes: ["userName"] },
-        { model: Direction, attributes: ["recipeDirection"] },
-        { model: Ingredient, attributes: ["ingredientName"] },
-      ],
-    });
-    console.log(recipeData)
-    //const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-   
+        include: [
+          { model: User, attributes: ["userName"] },
+          { model: Direction, attributes: ["recipeDirection"] },
+          { model: Ingredient, attributes: ["ingredientName"] },
+        ],
+      });
+    console.log("recipeData", recipeData)
+    // const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+
     res.render("recipe-details", {
       recipeData,
       logged_in: req.session.logged_in,
