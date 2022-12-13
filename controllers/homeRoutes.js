@@ -30,6 +30,32 @@ router.get('/recipes', async (req, res) => {
 }
 });
 
+router.get('/recipes/id', async (req, res) => {
+  try { 
+    const recipeData = await Recipe.findByPk({
+      include: [
+        { model: User,
+            attributes:['userName']
+        },
+        { model: Direction,
+            attributes:['recipeDirection']
+        },
+        { model: Ingredient,
+            attributes:['ingredientName']
+        },
+    ],
+  });
+  const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+  res.render("recipe-details", { 
+    recipes, 
+    logged_in: req.session.logged_in
+})
+} catch(err) {
+  console.log(err);
+  res.status(500).json(err)
+}
+});
+
 router.get('/login', (req, res) => {
 
   if (req.session.logged_in) {
