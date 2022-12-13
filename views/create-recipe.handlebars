@@ -4,21 +4,23 @@
         <div class="row justify-content-center">
             <!-- Default Form -->
             <div class="col-12 col-md-10 mb-3 p-4 bg-white">
-                <form>
+                <form id="new-recipe-form">
                     <div class="form-group">
                         <label for="recipename-input">Recipe name</label>
-                        <input type="recipename" class="form-control" id="recipename-input">
+                        <input type="recipename" 
+                        name="recipe-name" class="form-control" id="recipename-input">
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <input class="form-check-input" type="checkbox" 
+                        id="contains-nuts-box" value="option1">
                         <label class="form-check-label" for="inlineCheckbox1">Contains nuts</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" type="checkbox" id="vegan-box" value="option2">
                         <label class="form-check-label" for="inlineCheckbox2">Vegan</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <input class="form-check-input" type="checkbox" id="gluten-free-box" value="option3">
                         <label class="form-check-label" for="inlineCheckbox3">Gluten free</label>
                     </div>
                     <div class="ing-container">
@@ -37,9 +39,9 @@
                     </div>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">Instructions</span>
+                            <span class="input-group-text">Directions</span>
                         </div>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                        <textarea class="form-control" id="directions-text" aria-label="With textarea"></textarea>
                     </div>
                     <button class="btn btn-primary" type="submit" id="create-recipe-btn">Create</button>
                 </form>

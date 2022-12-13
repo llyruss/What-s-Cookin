@@ -40,9 +40,9 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     const recipeName = document.querySelector('input[name="recipe-name"]').value;
-    const tag1 = document.querySelector('input[name="tag-1"]').value;
-    const tag2 = document.querySelector('input[name="tag-2"]').value;
-    const tag3 = document.querySelector('input[name="tag-3"]').value;
+    const hasNuts = document.querySelector('#contains-nuts-box').value;
+    const vegan = document.querySelector('#vegan-box').value;
+    const glutenFree = document.querySelector('#gluten-free-box').value;
     const ingredientName = document.querySelector('.form-row').value
     const directions = document.querySelector('#directions-text').value
 
@@ -50,9 +50,9 @@ async function newFormHandler(event) {
         method: 'POST',
         body: JSON.stringify({
             recipeName,
-            tag1,
-            tag2,
-            tag3,
+            hasNuts,
+            vegan,
+            glutenFree,
             ingredientName,
             directions
 
@@ -63,9 +63,6 @@ async function newFormHandler(event) {
     });
     const responseJSON = await response.json()
     recipeId = responseJSON['id']
-    
-    
-    ingredients = responseJSON['ingredientName']
     
 
     // if (response.ok) {
