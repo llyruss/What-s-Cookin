@@ -20,10 +20,11 @@ router.post('/', async (req, res) => {
 
 
 router.post('/login', async (req, res) => {
+  console.log("lily")
   try {
     const dbUserData = await User.findOne({
       where: {
-        username: req.body.userName,
+        userName: req.body.userName,
       },
     });
 
@@ -68,7 +69,7 @@ router.post('/logout', (req, res) => {
   } else {
     res.status(404).end();
   }
-  res.json({message: "You are now logged out"})
+  res.json({ message: "You are now logged out" })
 });
 
 module.exports = router;
