@@ -36,6 +36,45 @@ ingContainer.appendChild(formRow)
 
 };
 
+async function newFormHandler(event) {
+    event.preventDefault();
+
+    const recipeName = document.querySelector('input[name="recipe-name"]').value;
+    const tag1 = document.querySelector('input[name="tag-1"]').value;
+    const tag2 = document.querySelector('input[name="tag-2"]').value;
+    const tag3 = document.querySelector('input[name="tag-3"]').value;
+    const ingredientName = document.querySelector('.form-row').value
+    const directions = document.querySelector('#directions-text').value
+
+    const response = await fetch(`/api/recipes`, {
+        method: 'POST',
+        body: JSON.stringify({
+            recipeName,
+            tag1,
+            tag2,
+            tag3,
+            ingredientName,
+            directions
+
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const responseJSON = await response.json()
+    recipeId = responseJSON['id']
+    
+    
+    ingredients = responseJSON['ingredientName']
+    
+
+    // if (response.ok) {
+    //     document.location.replace('/recipes');
+    // } else {
+    //     alert(response.statusText);
+    // }
+}
+
 plusBtn.addEventListener('click', (event) => {
     event.preventDefault()
     console.log('plus it up')
@@ -46,3 +85,5 @@ minusBtn.addEventListener('click', (event) => {
     event.preventDefault()
     console.log('minus it down')
 });
+
+document.querySelector('#new-recipe-form').addEventListener('submit', newFormHandler);
