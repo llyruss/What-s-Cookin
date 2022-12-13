@@ -2,7 +2,7 @@
 {{#each recipes as |recipe|}}
 
 
-<a href="/recipe-details"><h2>{{recipe.recipeName}}</a>
+<a href="/recipes/"{{recipe.id}}><h2>{{recipe.recipeName}}</a>
 <div class="recipename">{{recipe.user.userName}}
   <div class="tags"> 
     {{#if has_nuts}}
