@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>What's Cookin</title>
-</head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/style.css">
+  <title>What's Cookin</title>
+
 <body>
-    <div class="col-12 col-md-10 mb-3 p-3 bg-white rounded">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">What's Cookin
-            </a>
-            <i class="fa-solid fa-user-chef"></i>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dark-nav"
-              aria-controls="dark-nav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="dark-nav">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Recipes
-          <i class="fs fa-plate-utensils"></i>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/recipes">All recipes</a>
-          <a class="dropdown-item" href="#">Create recipe</a>
-        </div>
-      </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/login">Sign up</a>
-                </li>
-                {{!-- {{#if logged_in}} --}}
-                <button id="logout" class="logout">Logout</button>
-                {{!-- {{else}} --}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/login" tabindex="-1" aria-disabled="true">Login</a>
-                  {{!-- {{/if}} --}}
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-   {{{body}}} 
-    {{!-- {{#if logged_in}} --}}
-    <script src="/js/logout.js"></script>
-    {{!-- {{/if}} --}}
+
+  <div class="col-12 col-md-10 mb-3 p-3 bg-white rounded">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">What's Cookin</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dark-nav"
+        aria-controls="dark-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="dark-nav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/recipes">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Sign up</a>
+          </li>
+          {{#if logged_in}}
+          <li id="logout" class="logout nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Log Out</a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/login" tabindex="-1" aria-disabled="true">Login</a>
+            {{/if}}
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  {{{body}}}
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
+
 </html>

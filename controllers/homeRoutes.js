@@ -4,7 +4,9 @@ const { User, Recipe, Ingredient, Direction } = require('../models');
 
 router.get('/', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('home');
+  res.render('home', {
+    logged_in: req.session.logged_in
+  });
 });
 
 router.get('/recipes', async (req, res) => {
@@ -19,7 +21,8 @@ router.get('/recipes', async (req, res) => {
   });
   const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
   res.render("get-all-recipes", { 
-    recipes,
+    recipes, 
+    logged_in: req.session.logged_in
 })
 } catch(err) {
   console.log(err);
