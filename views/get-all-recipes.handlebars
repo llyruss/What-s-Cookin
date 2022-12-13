@@ -1,27 +1,28 @@
 <main>
-{{#each recipes as |recipe|}}
+  {{#each recipes as |recipe|}}
 
 
-<a href="/recipes/"{{recipe.id}}><h2>{{recipe.recipeName}}</a>
-<div class="recipename">{{recipe.user.userName}}
-  <div class="tags"> 
-    {{#if has_nuts}}
-      <p>
-        Contains Nuts
-      </p>
-    {{/if}}
-    {{#if gluten_free}}
-      <p>
-        Gluten Free
-      </p>
-    {{/if}}
-  {{#if vegan}}
-      <p>
-        Vegan
-      </p>
-    {{/if}}
-  </div>
-  
-{{/each}}
+  <a href="/recipes/" {{recipe.id}}>
+    <h2>{{recipe.recipeName}}</h2>
+    <div class="recipename">{{recipe.user.userName}}
+      <div class="tags">
+        {{#if has_nuts}}
+        <p>
+          Contains Nuts
+        </p>
+        {{/if}}
+        {{#if gluten_free}}
+        <p>
+          Gluten Free
+        </p>
+        {{/if}}
+        {{#if vegan}}
+        <p>
+          Vegan
+        </p>
+        {{/if}}
+      </div>
+
+      {{/each}}
 
 </main>
