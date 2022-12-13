@@ -40,19 +40,19 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     const recipeName = document.querySelector('input[name="recipe-name"]').value;
-    const hasNuts = document.querySelector('#contains-nuts-box').value;
-    const vegan = document.querySelector('#vegan-box').value;
-    const glutenFree = document.querySelector('#gluten-free-box').value;
-    const ingredientName = document.querySelector('.form-row').value
+    const has_nuts = document.querySelector('#contains-nuts-box').checked;
+    const vegan = document.querySelector('#vegan-box').checked;
+    const gluten_free = document.querySelector('#gluten-free-box').checked;
+    const ingredientName = document.querySelectorAll('.form-row')
     const directions = document.querySelector('#directions-text').value
 
     const response = await fetch(`/api/recipes`, {
         method: 'POST',
         body: JSON.stringify({
             recipeName,
-            hasNuts,
+            has_nuts,
             vegan,
-            glutenFree,
+            gluten_free,
             ingredientName,
             directions
 
