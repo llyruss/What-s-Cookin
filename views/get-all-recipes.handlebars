@@ -1,16 +1,27 @@
-<ol class="recipe-list">
-    <li>
-        Chicken
-        <img class="get-all-img" src="images/hayley-ryczek-HQ22vVXhWcc-unsplash.jpg">
-        <i class="fas fa-wheat-slash"></i>
-    </li>
-    <li>
-        Noodles
-         <img class="get-all-img" src="images/ikhsan-baihaqi-pbc2wXbQYpI-unsplash.jpg">
-        <i class="fas fa-vegan"></i>
-    </li>
-    <li>
-        Shrimp
-         <img class="get-all-img" src="images/maria-labanda-hEKN_m0qGMA-unsplash.jpg">
-    </li>
-</ol>
+<main>
+{{#each recipes as |recipe|}}
+
+
+<a href="/recipe-details"><h2>{{recipe.recipeName}}</a>
+<div class="recipename">{{recipe.user.userName}}
+  <div class="tags"> 
+    {{#if has_nuts}}
+      <p>
+        Contains Nuts
+      </p>
+    {{/if}}
+    {{#if gluten_free}}
+      <p>
+        Gluten Free
+      </p>
+    {{/if}}
+  {{#if vegan}}
+      <p>
+        Vegan
+      </p>
+    {{/if}}
+  </div>
+  
+{{/each}}
+
+</main>
