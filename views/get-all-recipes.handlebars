@@ -2,8 +2,8 @@
   <div id="date"></div>
   {{#each recipes as |recipe|}}
 
-
-  <a href="/recipes/{{recipe.id}}">
+<div class="recipe-list">
+<a href="/recipes/{{recipe.id}}">
     <h2>{{recipe.recipeName}}</h2>
     <div class="recipename">{{recipe.user.userName}}
       <div class="tags">
@@ -23,6 +23,8 @@
         </p>
         {{/if}}
       </div>
+</div>
+  
 
       {{/each}}
 
