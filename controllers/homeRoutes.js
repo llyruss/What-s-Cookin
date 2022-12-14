@@ -52,7 +52,7 @@ router.get("/recipes/:id", async (req, res) => {
       const recipe = recipeData.get({ plain: true });
       console.log(recipe)
     res.render("recipe-details", {
-      recipe,
+     recipe,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

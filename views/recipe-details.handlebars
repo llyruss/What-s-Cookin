@@ -1,25 +1,13 @@
 <main>
-    <div class="recipe-pic">
-        <img src="images/dan-gold-4_jhDO54BYg-unsplash.jpeg">
-    </div>
-
-    <h2>{{recipe.recipeName}}</h2>
-    <p>contains nuts</p>
-
-    <div>
-        <div>
-            <ul>Instructions
-                <li>cook chicken</li>
-                <li>Cook chicken</li>
-                <li>Cook chicken</li>
-            </ul>
-        </div>
-        <div>
-            <ul>Ingredients
-                <li>Chicken<span> 1lb</span></li>
-                <li>Butter<span> 1lb</span></li>
-
-            </ul>
-        </div>
-    </div>
+  <div>{{recipe.recipeName}}</div>
+   
+   
+   {{#each recipe.ingredients as |ingredient|}}
+ <div>{{ingredient.ingredientName}}</div>
+   {{/each}}
+   
+   {{#each recipe.directions as |recipe|}}
+ <div>{{recipe.recipeDirection}}</div>
+ {{/each}}
+  
 </main>
