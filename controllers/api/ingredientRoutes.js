@@ -8,6 +8,7 @@ async (req, res) => {
     try {
       const newIngredient = await Ingredient.create({
         ingredientName: req.body.ingredientName,
+        recipe_id: req.body.recipe_id
       });
       res.status(200).json(newIngredient);
     } catch (err) {

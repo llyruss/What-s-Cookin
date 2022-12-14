@@ -9,6 +9,7 @@ async (req, res) => {
     try {
       const newDirection = await Direction.create({
         recipeDirection: req.body.recipeDirection,
+        recipe_id: req.body.recipe_id
       });
       res.status(200).json(newDirection);
     } catch (err) {
