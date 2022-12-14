@@ -10,7 +10,7 @@ Making it easier to upload and find recipes
 
 ## INSTALLATION AND UPDATES MADE
 
-HTML, CSS, JavaScript, Node.js, Express.js, Handlebars.js, Mysql, Sequelize
+HTML, CSS, JavaScript, Node.js, Express.js, Handlebars.js, Mysql, Sequelize, day.js
 
 
 ## USAGE
