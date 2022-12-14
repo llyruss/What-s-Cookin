@@ -58,7 +58,7 @@ async function newFormHandler(event) {
    console.log(ingredientName)
   
    ingredientName.forEach( ingredient => {
-    x = {ingredientName : ingredient.value,
+     ingName= {ingredientName : ingredient.value,
         recipe_id : recipeId
     }
     fetch("/api/ingredients", {
@@ -66,7 +66,7 @@ async function newFormHandler(event) {
       headers: {
     'Content-Type': 'application/json',
       },
-      body: JSON.stringify(x),
+      body: JSON.stringify(ingName),
       
     }).then(r => {})
     console.log(x)
@@ -90,6 +90,7 @@ console.log(dirResponseJSON)
     } else {
         alert(response.statusText);
     }
+
 }
 
 plusBtn.addEventListener('click', (event) => {
@@ -104,3 +105,4 @@ minusBtn.addEventListener('click', (event) => {
 });
 
 document.querySelector('#new-recipe-form').addEventListener('submit', newFormHandler);
+

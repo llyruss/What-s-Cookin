@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Recipe, Ingredient, Direction } = require("../models");
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 router.get("/", async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
@@ -30,7 +30,7 @@ router.get("/recipes", async (req, res) => {
   }
 });
 
-router.get("/create",async (req, res) => {
+router.get("/create", withAuth, async (req, res) => {
   res.render("create-recipe", {
     logged_in: req.session.logged_in,
   });
