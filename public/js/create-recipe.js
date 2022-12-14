@@ -16,24 +16,14 @@ const ingredientInput = document.createElement('div')
 ingredientInput.setAttribute('class', 'col')
 const ingredientText = document.createElement('input')
 ingredientText.setAttribute('type', 'text')
-ingredientText.setAttribute('class', 'form-control')
+ingredientText.setAttribute('class', 'form-control ingredient')
 ingredientText.setAttribute('placeholder', 'Ingredient')
-
-const amountInput = document.createElement('div')
-amountInput.setAttribute('class', 'col')
-const amountText = document.createElement('input')
-amountText.setAttribute('type', 'text')
-amountText.setAttribute('class', 'form-control')
-amountText.setAttribute('placeholder', 'Amount')
 
 formRow.appendChild(miBtn)
 formRow.appendChild(plBtn)
 ingredientInput.appendChild(ingredientText)
 formRow.appendChild(ingredientInput)
-amountInput.appendChild(amountText)
-formRow.appendChild(amountInput)
 ingContainer.appendChild(formRow)
-
 };
 
 async function newFormHandler(event) {
@@ -43,27 +33,66 @@ async function newFormHandler(event) {
     const has_nuts = document.querySelector('#contains-nuts-box').checked;
     const vegan = document.querySelector('#vegan-box').checked;
     const gluten_free = document.querySelector('#gluten-free-box').checked;
-    const ingredientName = document.querySelectorAll('.form-row')
-    const directions = document.querySelector('#directions-text').value
+    const ingredientName = document.querySelectorAll('.ingredient')
+    const recipeDirection = document.querySelector('#directions-text').value
 
-    const response = await fetch(`/api/recipes`, {
+    const response = await fetch(`/api/recipes/create`, {
         method: 'POST',
         body: JSON.stringify({
             recipeName,
             has_nuts,
             vegan,
-            gluten_free,
-            ingredientName,
-            directions
+            gluten_free
+            
 
         }),
         headers: {
             'Content-Type': 'application/json'
         }
     });
+
     const responseJSON = await response.json()
     recipeId = responseJSON['id']
     
+   
+   console.log(ingredientName)
+  
+   ingredientName.forEach( ingredient => {
+    x = {ingredientName : ingredient.value,
+        recipe_id : recipeId
+    }
+    fetch("/api/ingredients", {
+      method: 'POST',
+      headers: {
+    'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(x),
+      
+    }).then(r => {})
+    console.log(x)
+  })
+
+   const dirResponse = await fetch(`/api/directions`, {
+    method: 'POST',
+    body: JSON.stringify({
+        recipeDirection,
+        recipe_id : recipeId
+    }),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+   });
+const dirResponseJSON = await dirResponse.json()
+console.log(dirResponseJSON)
+
+
+    // const ingResponse = await fetch(`/api/ingredients`, {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+
+    //     })
+    // })
+   
 
     // if (response.ok) {
     //     document.location.replace('/recipes');
