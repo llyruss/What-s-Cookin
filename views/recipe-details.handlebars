@@ -1,38 +1,45 @@
-<main>
-  <div>
-    <img src="/images/dan-gold-4_jhDO54BYg-unsplash.jpeg" class="recipe-pic">
- <h1>{{recipe.recipeName}}</h1>
-  </div>
- 
-   <h4><div class="tags">
+<main class="details-container">
+  <div class="img-name-container">
+    <div class="img-container">
+      <img src="/images/dan-gold-4_jhDO54BYg-unsplash.jpeg" class="recipe-pic">
+    </div>
+    <div class="name-tag-container">
+      <h1>{{recipe.recipeName}}</h1>
+      <div class="tags">
         {{#if recipe.has_nuts}}
-        <p>
+        <p class="details-tag">
           Contains Nuts
         </p>
         {{/if}}
         {{#if recipe.gluten_free}}
-        <p>
+        <p class="details-tag">
           Gluten Free
         </p>
         {{/if}}
         {{#if recipe.vegan}}
-        <p>
+        <p class="details-tag">
           Vegan
         </p>
         {{/if}}
-      </div></h4>
-   <div>
-   
-   <h2>Ingredients</h2>
-   {{#each recipe.ingredients as |ingredient|}}
- <ul>
-    <li>{{ingredient.ingredientName}}</li>
- </ul>
-   {{/each}}
-   <h2>Directions</h2>
-   {{#each recipe.directions as |recipe|}}
+      </div>
+    </div>
+  </div>
 
- <div>{{recipe.recipeDirection}}</div>
- {{/each}}
+  <div class="ing-dir-container">
+    <div class="ing-container">
+      <h2>Ingredients</h2>
+      {{#each recipe.ingredients as |ingredient|}}
+      <ul>
+        <li>{{ingredient.ingredientName}}</li>
+      </ul>
+      {{/each}}
+    </div>
+    <div class="dir-container">
+      <h2>Directions</h2>
+      {{#each recipe.directions as |recipe|}}
+
+      <div>{{recipe.recipeDirection}}</div>
+      {{/each}}
+    </div>
   </div>
 </main>
