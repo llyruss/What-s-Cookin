@@ -2,20 +2,20 @@
 
 ## DESCRIPTION
 
-A search engine for your favorite superheroes and villains to find their most recent media appearances.
+A blog that lets you enter a recipe and share it with other members who have signed up for the blog.
 
 ## MOTIVATION  
 
-Making it easier to find upload and find recipes
+Making it easier to upload and find recipes
 
 ## INSTALLATION AND UPDATES MADE
 
-HTML, CSS, JavaScript
-Bulma framework for CSS
-Marvel API and IMDB API
+HTML, CSS, JavaScript, Node.js, Express.js, Handlebars.js, Mysql, Sequelize
+
 
 ## USAGE
-Add a recipe and save it to look ata gian in the future
+
+Add a recipe and save it to look at agian in the future
 ![img](public/images/firstpagecooking.png)
 ![img](public/images/loginsignin.png)
 ![img](public/images/createrecipe.png)
@@ -40,8 +40,9 @@ https://github.com/llyruss
 
 -Deshawn Williams 
 
-
+https://github.com/deshawnwilliams94
 
 -Garrett Ohrt
+
 https://github.com/garrettohrt
 
