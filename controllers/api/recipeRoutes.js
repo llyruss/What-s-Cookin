@@ -44,7 +44,7 @@ const { Recipe, User, Direction, Ingredient } = require('../../models');
   });
 
 
-  router.post('/', 
+  router.post('/create', 
   //withAuth, 
   async (req, res) => {
     try {
