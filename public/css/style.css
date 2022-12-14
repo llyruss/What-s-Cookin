@@ -1,7 +1,24 @@
+body {
+  background-color: #DBDAD8
+}
+.navbar{
+background-color: #DBDAD8;
+
+}
+.p-3 {
+  padding-top: 0rem !important;
+    padding-right: 0rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+}
+.display-2 {
+  font-size: 3rem;
+}
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 .home-pic {
   display: flex;
@@ -13,7 +30,7 @@ main {
 
 .recipe-pic {
   display: flex;
-  justify-content: center;
+ 
   height: 300px;
   width: 600px;
 }
@@ -34,8 +51,14 @@ main {
   display: flex;
   font-size: 10px;
   margin: 10px;
-  justify-content: space-evenly;
+
 }
 .recipename{
     font-size: 15px;
+}
+
+.btn-primary{
+  color: black;
+  background-color: #CE9F3C;
+  border-color: #CE9F3C
 }
