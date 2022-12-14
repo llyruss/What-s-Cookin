@@ -85,9 +85,6 @@ async function newFormHandler(event) {
 const dirResponseJSON = await dirResponse.json()
 console.log(dirResponseJSON)
 
-
-  
-
     if (response.ok) {
         document.location.replace('/recipes');
     } else {
