@@ -1,13 +1,34 @@
 <main>
-  <div>{{recipe.recipeName}}</div>
+  <h1>{{recipe.recipeName}}</h1>
+   <h4><div class="tags">
+        {{#if recipe.has_nuts}}
+        <p>
+          Contains Nuts
+        </p>
+        {{/if}}
+        {{#if recipe.gluten_free}}
+        <p>
+          Gluten Free
+        </p>
+        {{/if}}
+        {{#if recipe.vegan}}
+        <p>
+          Vegan
+        </p>
+        {{/if}}
+      </div></h4>
+   <div>
    
-   
+   <h2>Ingredients</h2>
    {{#each recipe.ingredients as |ingredient|}}
- <div>{{ingredient.ingredientName}}</div>
+ <ul>
+    <li>{{ingredient.ingredientName}}</li>
+ </ul>
    {{/each}}
-   
+   <h2>Directions</h2>
    {{#each recipe.directions as |recipe|}}
+
  <div>{{recipe.recipeDirection}}</div>
  {{/each}}
-  
+  </div>
 </main>
