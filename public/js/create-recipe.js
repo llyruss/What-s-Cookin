@@ -86,19 +86,13 @@ const dirResponseJSON = await dirResponse.json()
 console.log(dirResponseJSON)
 
 
-    // const ingResponse = await fetch(`/api/ingredients`, {
-    //     method: 'POST',
-    //     body: JSON.stringify({
+  
 
-    //     })
-    // })
-   
-
-    // if (response.ok) {
-    //     document.location.replace('/recipes');
-    // } else {
-    //     alert(response.statusText);
-    // }
+    if (response.ok) {
+        document.location.replace('/recipes');
+    } else {
+        alert(response.statusText);
+    }
 }
 
 plusBtn.addEventListener('click', (event) => {
