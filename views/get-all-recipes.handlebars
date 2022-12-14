@@ -1,15 +1,18 @@
 <main>
   <div id="date"></div>
-  {{#each recipes as |recipe|}}
 
-<div class="recipe-list">
-<a href="/recipes/{{recipe.id}}">
-    <h2>{{recipe.recipeName}}</h2>
-    <div class="recipename">{{recipe.user.userName}}
+  <div class="recipe-list">
+    {{#each recipes as |recipe|}}
+
+    <a href="/recipes/{{recipe.id}}">
+      <h2>{{recipe.recipeName}}</h2>
+    </a>
+    <div class="recipe-username">
+      {{recipe.user.userName}}
       <div class="tags">
         {{#if has_nuts}}
         <p>
-          Contains Nuts
+        Contains Nuts
         </p>
         {{/if}}
         {{#if gluten_free}}
@@ -23,9 +26,6 @@
         </p>
         {{/if}}
       </div>
-</div>
-  
-
       {{/each}}
-
+    </div>
 </main>

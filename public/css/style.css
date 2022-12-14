@@ -1,25 +1,42 @@
 body {
   background-color: #DBDAD8
 }
-.navbar{
-background-color: #DBDAD8;
+
+.navbar {
+  background-color: #DBDAD8;
 
 }
+
+.nav-line {
+  display: flex;
+
+  border-bottom-color: black;
+
+  border-bottom: 2px solid;
+}
+
 .p-3 {
   padding-top: 0rem !important;
-    padding-right: 0rem !important;
-    padding-bottom: 0rem !important;
-    padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
 }
+
 .display-2 {
   font-size: 3rem;
 }
+
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
 }
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .home-pic {
   display: flex;
   justify-content: center;
@@ -27,12 +44,17 @@ main {
   width: 600px;
   margin: 20px;
 }
-
+.details-container {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
 .recipe-pic {
   display: flex;
- 
+
   height: 300px;
-  width: 600px;
+  width: 400px;
+  padding-top: 20px;
 }
 
 .get-all-img {
@@ -42,23 +64,100 @@ main {
 }
 
 .recipe-list {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  font-size: 10px;
+  margin: 10px;
+}
+
+.recipe-username {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-}
-.tags {
-  display: flex;
-  font-size: 10px;
-  margin: 10px;
-
-}
-.recipename{
-    font-size: 15px;
+  font-size: 15px;
 }
 
-.btn-primary{
+.btn-primary {
   color: black;
   background-color: #CE9F3C;
+  border-color: #CE9F3C;
+}
+
+.btn-primary:hover {
+  background-color: #CE9F3C;
   border-color: #CE9F3C
+}
+.details-tag{
+  font-size: small;
+}
+a {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+
+a:visited {
+  text-decoration: none;
+}
+
+
+a:hover {
+  color: #CE9F3C;
+  text-decoration: none;
+}
+
+
+a:active {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 980px) {
+
+  .img-name-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    }
+    .img-container{
+      display:flex;
+    flex-direction: column;
+    padding-left: 50px;
+    margin-right: 10rem;
+    }
+    .name-tag-container{
+      display:flex;
+      flex-direction: column;
+      padding-top: 35px;
+      
+    }
+    .ing-dir-container{
+      display:flex;
+      flex-direction: row;
+    }
+    .ing-container{
+      display:flex;
+      flex-direction: column;
+      padding-top: 20px;
+      padding-left: 50px;
+     margin-right: 10rem;
+    }
+    .dir-container{
+      display:flex;
+      flex-direction: column;
+    margin-left: 15rem;
+    }
 }
