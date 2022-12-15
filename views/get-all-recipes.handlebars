@@ -4,17 +4,17 @@
   <div class="recipe-list">
     {{#each recipes as |recipe|}}
 
-    <button value="{{recipe.id}}" id="delete">Delete Me!</button>
+    <button value="{{recipe.id}}" class="delete">Delete Me!</button>
 
     <a href="/recipes/{{recipe.id}}">
       <h2>{{recipe.recipeName}}</h2>
     </a>
     <div class="recipe-username">
-       by {{recipe.user.userName}}
+      by {{recipe.user.userName}}
       <div class="tags">
         {{#if has_nuts}}
         <p>
-        Contains Nuts
+          Contains Nuts
         </p>
         {{/if}}
         {{#if gluten_free}}
@@ -31,3 +31,4 @@
       {{/each}}
     </div>
 </main>
+<script src="/js/get-all.js"></script>
