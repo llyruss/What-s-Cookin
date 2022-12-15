@@ -52,7 +52,8 @@ const { Recipe, User, Direction, Ingredient } = require('../../models');
         recipeName: req.body.recipeName,
         has_nuts: req.body.has_nuts,
         gluten_free: req.body.gluten_free,
-        vegan: req.body.vegan
+        vegan: req.body.vegan,
+        user_id: req.session.userId
       });
       res.status(200).json(newRecipe);
     } catch (err) {
