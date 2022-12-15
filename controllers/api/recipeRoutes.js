@@ -2,49 +2,53 @@ const router = require('express').Router();
 const { Recipe, User, Direction, Ingredient } = require('../../models');
 // const withAuth =  require('../../utils/auth')
 
-  router.get("/", async (req, res) => {
-    try {
-      const recipeData = await Recipe.findAll({
-        include: [
-            { model: User,
-                attributes:['userName']
-            },
-        ],
-      });
-      res.status(200).json(recipeData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-
-  router.get('/:id', async (req, res) => {
-  
-    try {
-      const oneRecipe = await Recipe.findByPk(req.params.id, {
-        include: [
-          { model: User,
-              attributes:['userName']
-          },
-          { model: Direction,
-              attributes:['recipeDirection']
-          },
-          { model: Ingredient,
-              attributes:['ingredientName']
-          },
+router.get("/", async (req, res) => {
+  try {
+    const recipeData = await Recipe.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['userName']
+        },
       ],
-      })
-      if (!oneRecipe) {
-        res.status(404).json({message: "No recipe found with that id"});
-        return
-      }
-      res.status(200).json(oneRecipe);
-    } catch(err) {
-      res.status(400).json(err)
+    });
+    res.status(200).json(recipeData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+
+  try {
+    const oneRecipe = await Recipe.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['userName']
+        },
+        {
+          model: Direction,
+          attributes: ['recipeDirection']
+        },
+        {
+          model: Ingredient,
+          attributes: ['ingredientName']
+        },
+      ],
+    })
+    if (!oneRecipe) {
+      res.status(404).json({ message: "No recipe found with that id" });
+      return
     }
-  });
+    res.status(200).json(oneRecipe);
+  } catch (err) {
+    res.status(400).json(err)
+  }
+});
 
 
-  router.post('/create', 
+router.post('/create',
   //withAuth, 
   async (req, res) => {
     try {
@@ -62,7 +66,21 @@ const { Recipe, User, Direction, Ingredient } = require('../../models');
     }
   });
 
-  module.exports = router
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    const recipeData = await Recipe.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    console.log("deleted")
+    res.status(200).json(recipeData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+module.exports = router
 
 
-  
+
