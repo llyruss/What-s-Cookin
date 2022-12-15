@@ -69,7 +69,7 @@ async function newFormHandler(event) {
       body: JSON.stringify(ingName),
       
     }).then(r => {})
-    console.log(x)
+    
   })
 
    const dirResponse = await fetch(`/api/directions`, {
