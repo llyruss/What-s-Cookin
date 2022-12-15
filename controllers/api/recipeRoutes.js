@@ -62,6 +62,20 @@ const { Recipe, User, Direction, Ingredient } = require('../../models');
     }
   });
 
+  router.delete('/delete/:id', async (req, res) => {
+    try {
+      const recipeData = await Recipe.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      res.status(200).json(recipeData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  })
+
   module.exports = router
 
 
