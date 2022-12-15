@@ -1,17 +1,17 @@
 const plusBtn = document.querySelector('.plus-btn');
-const minusBtn = document.querySelector('.minus-btn');
+// const minusBtn = document.querySelector('.minus-btn');
 const ingContainer = document.querySelector('.ing-container');
 
 function addIngredientElement() {
 
 const formRow = document.createElement('div')
 formRow.setAttribute('class', 'form-row')
-const miBtn = document.createElement('button')
-miBtn.setAttribute('class', "minus-btn")
-miBtn.innerHTML = '-'
-const plBtn = document.createElement('button')
-plBtn.setAttribute('class', "plus-btn")
-plBtn.innerHTML = '+'
+// const miBtn = document.createElement('button')
+// miBtn.setAttribute('class', "minus-btn")
+// miBtn.innerHTML = '-'
+// const plBtn = document.createElement('button')
+// plBtn.setAttribute('class', "plus-btn")
+// plBtn.innerHTML = '+'
 const ingredientInput = document.createElement('div')
 ingredientInput.setAttribute('class', 'col')
 const ingredientText = document.createElement('input')
@@ -19,8 +19,8 @@ ingredientText.setAttribute('type', 'text')
 ingredientText.setAttribute('class', 'form-control ingredient')
 ingredientText.setAttribute('placeholder', 'Ingredient')
 
-formRow.appendChild(miBtn)
-formRow.appendChild(plBtn)
+// formRow.appendChild(miBtn)
+// formRow.appendChild(plBtn)
 ingredientInput.appendChild(ingredientText)
 formRow.appendChild(ingredientInput)
 ingContainer.appendChild(formRow)
@@ -99,10 +99,10 @@ plusBtn.addEventListener('click', (event) => {
     addIngredientElement()
 });
 
-minusBtn.addEventListener('click', (event) => {
-    event.preventDefault()
-    console.log('minus it down')
-});
+// minusBtn.addEventListener('click', (event) => {
+//     event.preventDefault()
+//     console.log('minus it down')
+// });
 
 document.querySelector('#new-recipe-form').addEventListener('submit', newFormHandler);
 
