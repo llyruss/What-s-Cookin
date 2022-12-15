@@ -12,7 +12,7 @@ Direction.init(
       autoIncrement: true,
     },
     recipeDirection: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     recipe_id: {
